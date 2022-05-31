@@ -8,22 +8,26 @@ namespace u21566641_HW03.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Home()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Files()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Images()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult AboutMe()
+        {
+            return View();
+        }
+        public ActionResult Videos()
+        {
             return View();
         }
     }

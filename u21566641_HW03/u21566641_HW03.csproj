@@ -167,6 +167,7 @@
     <Content Include="Views\Home\Files.cshtml" />
     <Content Include="Views\Home\Images.cshtml" />
     <Content Include="Views\Home\AboutMe.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
