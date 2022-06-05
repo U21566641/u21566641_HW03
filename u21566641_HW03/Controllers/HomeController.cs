@@ -42,10 +42,6 @@ namespace u21566641_HW03.Controllers
             return RedirectToAction("Home");
         }
 
-        public ActionResult Files()
-        {
-            return View();
-        }
 
         public ActionResult Images()
         {

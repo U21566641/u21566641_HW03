@@ -1,0 +1,36 @@
+﻿@model IEnumerable<u21566641_HW03.Models.FileModel>
+@{
+    ViewBag.Title = "Files";
+}
+
+<h2>Files</h2>
+<h6>This page is used to display and download all files uploaded by users.</h6>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.FileName)</th>
+        <th>Download option</th>
+        <th>Delete Option</th>
+    </tr>
+    
+
+@foreach(var item in Model)
+            {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FileName)
+    </td>
+    <td>
+        <button type="button"  class="btn-success"
+                onclick="location.href='@Url.Action("DownloadFile", "File", new { fileName = item.FileName })'">
+            Download
+        </button>
+    </td>
+<td>
+    <button type="button" class="btn-danger"
+            onclick="location.href='@Url.Action("DeleteFile", "File", new { fileName = item.FileName })'"
+            >Delete</button>
+</td>
+</tr>
+            }
+</table>
