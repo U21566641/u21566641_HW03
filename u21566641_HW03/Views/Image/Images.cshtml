@@ -5,8 +5,28 @@
     <script>
 
         $(document).ready(function ($) {
-            $('.gallery a').fancybox();
-        })
+            $('.fancybox').fancybox({
+                autoCenter: true,
+                autoSize: false,
+                closeEffect: 'fade',
+                openSpeed: 600,
+                closeSpeed: 200,
+                closeClick: true,
+                scrollOutside: false,
+                topRatio: 0.5,
+                leftRatio: 0.5,
+                fitToView: false,
+                margin: 50,
+                
+                helpers: {
+                    overlay: {
+                        locked: false
+                    }
+                }
+                
+
+            });
+        });
     </script>
     }
 
@@ -24,13 +44,13 @@
 
 <div class="container ">
     <div class="row ">
-        <div class="row padding">
+        
             @foreach (var item in Model)
             {
 
                 <div class="col-lg-4 px-3">
                     <div>
-                        <a href="~/Media/Images/@item.FileName" >
+                        <a class ="fancybox" href="/Media/Images/@item.FileName" >
                             <img src="~/Media/Images/@item.FileName" class="gallery" height="220" width="220" />
                         </a>
 
@@ -50,7 +70,6 @@
 
 
             }
-        </div>
 
     </div>
 </div>

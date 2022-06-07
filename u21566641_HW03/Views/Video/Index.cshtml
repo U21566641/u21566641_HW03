@@ -1,0 +1,75 @@
+﻿
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function ($) {
+            $('.fancybox').fancybox({
+                autoCenter: true,
+                autoSize: false,
+                closeEffect: 'fade',
+                openSpeed: 600,
+                closeSpeed: 200,
+                closeClick: true,
+                scrollOutside: false,
+                topRatio: 0.5,
+                leftRatio: 0.5,
+                fitToView: false,
+                margin: 50,
+
+                helpers: {
+                    overlay: {
+                        locked: false
+                    }
+                }
+
+
+            });
+        });
+    </script>
+}
+
+
+
+@model IEnumerable<u21566641_HW03.Models.FileModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Videos</h2>
+<h3>All videos uploaded by the user will be displayed here.</h3>
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 px-3">
+                <div>
+                    <a class ="fancybox" href="/Media/Videos/@item.FileName">
+                        <video height="320" width="320">
+                            <source class="gallery " src="~/Media/Videos/@item.FileName" />
+                        </video>
+                    </a>
+
+                    <p>@item.FileName</p>
+
+                    <button type="button" class="btn-success mb-4"
+                            onclick="location.href='@Url.Action("DownloadFile", "Video", new { fileName = item.FileName })'">
+                        Download
+                    </button>
+                    <button type="button" class="btn-danger mb-4"
+                            onclick="location.href='@Url.Action("DeleteFile", "Video", new { fileName = item.FileName })'">
+                        Delete
+                    </button>
+
+                </div>
+            </div>
+
+        }
+    </div>
+
+</div>

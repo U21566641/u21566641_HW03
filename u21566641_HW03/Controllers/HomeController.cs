@@ -43,17 +43,10 @@ namespace u21566641_HW03.Controllers
         }
 
 
-        public ActionResult Images()
-        {
-            return View();
-        }
         public ActionResult AboutMe()
         {
             return View();
         }
-        public ActionResult Videos()
-        {
-            return View();
-        }
+        
     }
 }
