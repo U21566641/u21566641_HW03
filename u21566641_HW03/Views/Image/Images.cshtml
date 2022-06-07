@@ -1,0 +1,57 @@
+﻿
+
+@section scripts{
+    
+    <script>
+
+        $(document).ready(function ($) {
+            $('.gallery a').fancybox();
+        })
+    </script>
+    }
+
+
+@model IEnumerable<u21566641_HW03.Models.FileModel>
+
+
+
+@{
+    ViewBag.Title = "Images";
+}
+
+<h2>Images</h2>
+<h6>Page displaying all images uploaded by the user</h6>
+
+<div class="container ">
+    <div class="row ">
+        <div class="row padding">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-lg-4 px-3">
+                    <div>
+                        <a href="~/Media/Images/@item.FileName" >
+                            <img src="~/Media/Images/@item.FileName" class="gallery" height="220" width="220" />
+                        </a>
+
+                        <p>@item.FileName</p>
+
+                        <button type="button" class="btn-success mb-4"
+                                onclick="location.href='@Url.Action("DownloadFile", "Image", new { fileName = item.FileName })'">
+                            Download
+                        </button>
+                        <button type="button" class="btn-danger mb-4"
+                                onclick="location.href='@Url.Action("DeleteFile", "Image", new { fileName = item.FileName })'">
+                            Delete
+                        </button>
+
+                    </div>
+                </div>
+
+
+            }
+        </div>
+
+    </div>
+</div>
+

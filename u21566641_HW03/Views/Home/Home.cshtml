@@ -7,26 +7,28 @@
 <h2>Home</h2>
 <h3>Media Uploading Form</h3>
 <div class="container">
-    <div class="col-lg-8 col-md-12 col-sm-12">
-        <h3>Description</h3>
-        <p>
-            This is the page on which you will choose and upload the media which you
-            want to upload.
-        </p>
-    </div>
-    <div class="col-lg-4 col-md-12 col-sm-12">
-        <h3>Option Selection</h3>
-        @using (Html.BeginForm("Home", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <input type="radio" name="option" value="document" />
-            <label for="Document">Document</label><br />
-            <input type="radio" name="option" value="image" />
-            <label for="Image">Image</label><br />
-            <input type="radio" name="option" value="video" />
-            <label for="Video">Video</label><br />
-            <input type="file" name="postedFile" /><br>
-            <button type="submit" value="Upload">Submit</button>
-        }
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <h3>Description</h3>
+            <p>
+                This is the page on which you will choose and upload the media which you
+                want to upload.
+            </p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <h3>Option Selection</h3>
+            @using (Html.BeginForm("Home", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input type="radio" name="option" value="document" />
+                <label for="Document">Document</label><br />
+                <input type="radio" name="option" value="image" />
+                <label for="Image">Image</label><br />
+                <input type="radio" name="option" value="video" />
+                <label for="Video">Video</label><br />
+                <input type="file" name="postedFile" /><br>
+                <button type="submit" class="mt-2" value="Upload">Submit</button>
+            }
+        </div>
     </div>
 </div>
 
