@@ -5,18 +5,26 @@
 
 
 <h2>Home</h2>
-<h3>Media Uploading Form</h3>
+<h6>Media Uploading Form</h6>
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-12 col-sm-12">
-            <h3>Description</h3>
+        <div class="mt-3 col-lg-8 col-md-12 col-sm-12">
+            <h4>Description</h4>
             <p>
-                This is the page on which you will choose and upload the media which you
-                want to upload.
+                This system was designed as a media uploading system for
+                the INF272 module at the University of Pretoria. It contains
+                functionalities for uploading, viewing, and deleting documents, images,
+                and videos. The uploaded images and videos can also be clicked on
+                to make them pop out onto the screen and display their original sizes.
+                Click again on images to close them, and click the back button
+                at the top of your browser on videos to close them.
+                The page you are currently on is the Home Page, which is
+                used to upload files which can be viewed in different sections of the
+                system.
             </p>
         </div>
-        <div class="col-lg-4 col-md-12 col-sm-12">
-            <h3>Option Selection</h3>
+        <div class="mt-3 col-lg-4 col-md-12 col-sm-12">
+            <h4>Option Selection</h4>
             @using (Html.BeginForm("Home", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 <input type="radio" name="option" value="document" />

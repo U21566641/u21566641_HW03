@@ -9,7 +9,7 @@
                 autoCenter: true,
                 autoSize: false,
                 closeEffect: 'fade',
-                openSpeed: 600,
+                openSpeed: 400,
                 closeSpeed: 200,
                 closeClick: true,
                 scrollOutside: false,
@@ -40,15 +40,15 @@
 }
 
 <h2>Images</h2>
-<h6>Page displaying all images uploaded by the user</h6>
+<h6>Page displaying all uploaded images</h6>
 
-<div class="container ">
+<div class="container">
     <div class="row ">
         
             @foreach (var item in Model)
             {
 
-                <div class="col-lg-4 px-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 px-3">
                     <div>
                         <a class ="fancybox" href="/Media/Images/@item.FileName" >
                             <img src="~/Media/Images/@item.FileName" class="gallery" height="220" width="220" />
