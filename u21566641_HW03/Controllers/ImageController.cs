@@ -12,18 +12,23 @@ namespace u21566641_HW03.Controllers
         // GET: Image
         public ActionResult Images()
         {
+            //Create FileModel List
             List<Models.FileModel> images = new List<Models.FileModel>();
 
+            //Gets all files uploaded in Images folder
             String[] files = Directory.GetFiles(Server.MapPath("~/Media/Images"));
 
+            //Iterates through files
             foreach (string file in files)
             {
+                //Add each file to list             //Sets FileName in Model
                 images.Add(new Models.FileModel { FileName = Path.GetFileName(file) });
             }
 
-            return View(images);
+            return View(images);//Returns image to view
         }
 
+        //Method to download file
         public FileResult DownloadFile(String fileName)
         {
             String filePath = Server.MapPath("~/Media/Images/") + fileName;
@@ -32,10 +37,17 @@ namespace u21566641_HW03.Controllers
             return File(bytes, "application/octet-stream", fileName);
         }
 
+
+        //Method to delete file
         public ActionResult DeleteFile(String fileName)
         {
+            //Gets full path of file
+            
             String filePath = Server.MapPath("~/Media/Images/") + fileName;
+            //Creates new FileInfo object with the relevant file
             FileInfo file = new FileInfo(filePath);
+            
+            //Deletes file
             file.Delete();
 
             return RedirectToAction("Images");

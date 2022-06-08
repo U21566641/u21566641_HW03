@@ -15,11 +15,13 @@ namespace u21566641_HW03.Controllers
             return View();
         }
 
+        //Method to add file to folder
         [HttpPost]
         public ActionResult Home(HttpPostedFileBase postedFile, String option)
         {
             var filePath = "";
 
+            //Compares the file option (document/video/image) and sets relevant filepath
              switch (option)
              {
                  case "document":
@@ -36,7 +38,7 @@ namespace u21566641_HW03.Controllers
 
 
             var path = Path.Combine(filePath, postedFile.FileName);
-            postedFile.SaveAs(path);
+            postedFile.SaveAs(path);//Saves file to relevant folder
 
 
             return RedirectToAction("Home");
